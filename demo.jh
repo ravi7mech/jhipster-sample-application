@@ -1,0 +1,28 @@
+entity QuestionVotes {
+	vote Vote
+}
+entity AnswerVotes {
+	vote Vote
+}
+entity Student{
+}
+entity Teacher{
+}
+enum Vote {
+    UPVOTE, DOWNVOTE
+}
+entity Question{
+    title String required
+}
+entity Answer{
+    body String required
+}
+relationship OneToMany {
+	Student to QuestionVotes,
+    Teacher to QuestionVotes,
+    Student to AnswerVotes,
+    Teacher to AnswerVotes,
+    Question to QuestionVotes,
+    Answer to AnswerVotes
+}
+
