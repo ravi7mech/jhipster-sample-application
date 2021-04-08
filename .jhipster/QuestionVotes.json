@@ -1,0 +1,43 @@
+{
+  "name": "QuestionVotes",
+  "fields": [
+    {
+      "fieldName": "vote",
+      "fieldType": "Vote",
+      "fieldValues": "UPVOTE,DOWNVOTE"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "student",
+      "otherEntityRelationshipName": "questionVotes",
+      "relationshipName": "student"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "teacher",
+      "otherEntityRelationshipName": "questionVotes",
+      "relationshipName": "teacher"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "question",
+      "otherEntityRelationshipName": "questionVotes",
+      "relationshipName": "question"
+    }
+  ],
+  "entityTableName": "question_votes",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "microserviceName": "jhipsterSampleApplication",
+  "clientRootFolder": "jhipsterSampleApplication",
+  "databaseType": "sql",
+  "changelogDate": "20210408143413"
+}
