@@ -40,7 +40,9 @@
     "pages": [],
     "creationTimestamp": 1617892347159,
     "jwtSecretKey": "MzM0Nzk2MGVjMWU0ODQxYzY4OGM1MTc2OGYwMWZiYjhkNWUxNmEwNTkxZmVlMWZiOGY5ZGRmMTBlODk1NjY0OTlkNTUyYzIzNjgwZDBhMDFhYTM0MGQ0NjdmMWUzZjhhZDBkMDkzZGQ4MTc2MjZjNWUxY2JjNjVjMDAzNGMyNTE=",
-    "reactive": false
+    "reactive": false,
+    "entities": ["QuestionVotes", "AnswerVotes", "Student", "Teacher", "Question", "Answer"],
+    "lastLiquibaseTimestamp": 1617892516000
   },
   "git-provider": "GitHub",
   "git-company": "ravi7mech",
