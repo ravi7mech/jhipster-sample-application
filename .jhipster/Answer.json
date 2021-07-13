@@ -24,7 +24,7 @@
   "readOnly": false,
   "embedded": false,
   "applications": "*",
-  "microserviceName": "jhipsterSampleApplication",
+  "microserviceName": "orderMgmt",
   "clientRootFolder": "jhipsterSampleApplication",
   "databaseType": "sql",
   "changelogDate": "20210408143516"
