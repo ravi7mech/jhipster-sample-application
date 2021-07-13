@@ -1,0 +1,190 @@
+{
+  "name": "Customer",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "formattedName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "tradingName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "custType",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "title",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "firstName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "lastName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "middleName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dateOfBirth",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "gender",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "maritalStatus",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nationality",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "customerEmail",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "companyidType",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "companyid",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "primaryContactAdminIndividualId",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "custBillingAcc",
+      "otherEntityRelationshipName": "customer",
+      "relationshipName": "custBillingAcc",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "custCreditProfile",
+      "otherEntityRelationshipName": "customer",
+      "relationshipName": "custCreditProfile",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "custBillingRef",
+      "otherEntityRelationshipName": "customer",
+      "relationshipName": "custBillingRef",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "custContact",
+      "otherEntityRelationshipName": "customer",
+      "relationshipName": "custContact"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "custStatistics",
+      "otherEntityRelationshipName": "customer",
+      "relationshipName": "custStatistics"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "custChar",
+      "otherEntityRelationshipName": "customer",
+      "relationshipName": "custChar"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "custCommunicationRef",
+      "otherEntityRelationshipName": "customer",
+      "relationshipName": "custCommunicationRef"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "custPasswordChar",
+      "otherEntityRelationshipName": "customer",
+      "relationshipName": "custPasswordChar"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "custNewsLetterConfig",
+      "otherEntityRelationshipName": "customer",
+      "relationshipName": "custNewsLetterConfig"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "custSecurityChar",
+      "otherEntityRelationshipName": "customer",
+      "relationshipName": "custSecurityChar"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "custRelParty",
+      "otherEntityRelationshipName": "customer",
+      "relationshipName": "custRelParty"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "custISVRef",
+      "otherEntityRelationshipName": "customer",
+      "relationshipName": "custISVRef"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "shoppingSessionRef",
+      "otherEntityRelationshipName": "customer",
+      "relationshipName": "shoppingSessionRef"
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "industry",
+      "otherEntityRelationshipName": "customer",
+      "relationshipName": "industry",
+      "ownerSide": false
+    }
+  ],
+  "entityTableName": "customer",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": ["orderMgmt"],
+  "microserviceName": "orderMgmt",
+  "clientRootFolder": "orderMgmt",
+  "databaseType": "sql",
+  "changelogDate": "20210713154441"
+}

@@ -11,7 +11,7 @@
     -->
     <changeSet id="20210408143514-1" author="jhipster">
         <createTable tableName="teacher">
-            <column name="id" type="bigint">
+            <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
