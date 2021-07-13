@@ -1,0 +1,48 @@
+{
+  "name": "IndNewsLetterConf",
+  "fields": [
+    {
+      "fieldName": "newLetterTypeId",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "value",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "individualId",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "individual",
+      "otherEntityRelationshipName": "indNewsLetterConf",
+      "relationshipName": "individual",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "newsLetterType",
+      "otherEntityRelationshipName": "indNewsLetterConf",
+      "relationshipName": "newsLetterType"
+    }
+  ],
+  "entityTableName": "ind_news_letter_conf",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": ["orderMgmt"],
+  "microserviceName": "orderMgmt",
+  "clientRootFolder": "orderMgmt",
+  "databaseType": "sql",
+  "changelogDate": "20210713154507"
+}
