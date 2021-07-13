@@ -1,0 +1,382 @@
+
+application {
+  config {
+    baseName orderMgmt,
+    applicationType microservice,
+    packageName com.apptium,
+    authenticationType jwt,
+    prodDatabaseType mysql
+  }
+  entities *
+  service all with serviceImpl
+}
+
+entity Customer {
+  	name String required,
+	formattedName String required,
+	tradingName String required,
+	custType String required,
+    title String required,
+    firstName String required,
+    lastName String required,
+    middleName String,
+    dateOfBirth Instant required,
+    gender String,
+    maritalStatus String,
+    nationality String required,
+    status String required,
+    customerEmail String required,
+    companyidType String required,
+    companyid Integer required,
+    primaryContactAdminIndividualId Integer required
+}
+
+entity CustCommunicationRef	{
+	customerNotificationId	String required,
+    role String required,
+    status	String,
+    customerId	Integer required
+}
+
+entity CustChar {
+	name String required,
+	value String required,
+	valuetype String required,
+	customerId Integer required
+}
+entity CustSecurityChar{
+	name String required,
+	value String required,
+	valuetype String required,
+	customerId Integer required
+}
+entity CustPasswordChar {
+	name String required,
+	value String required,
+	valuetype String required,
+	customerId Integer required
+}
+
+
+
+entity CustBillingAcc{
+	name String required,
+	href String required,
+	status String required,
+	description String,
+	billingAccountNumber Long required,
+	customerId Integer required,
+	currencyCode Integer required
+}
+
+entity CustCreditProfile {
+	customerIDType1 String required,
+	customerIDRef1 String required,
+	customerIDType2 String required,
+	customerIDRef2 String required,
+	creditCardNumber Long required,
+	creditProfileData Instant required,
+	creditRiskRating String required,
+	creditRiskRatingDesc String required,
+	creditScore Integer required,
+	validUntil Instant required,
+	customerId Integer required
+}
+
+entity CustPaymentMethod{
+	name String required,
+	description String,
+	preferred Boolean required,
+	type String required,
+	authorizationCode Integer required,
+	status String required,
+	statusDate Instant required,
+	details String required,
+	customerId Integer required
+
+}
+
+entity CustContact {
+	name String required,
+	description String,
+	preferred Boolean required,
+	type String required,
+	validFrom Instant required,
+	validTo Instant required,
+	customerId Integer required
+
+}
+
+entity CustContactChar{
+	type String required,
+	street1 String required,
+	street2 String required,
+	city String required,
+	stateOrProvince String required,
+	country String required,
+	postCode Long required,
+	phoneNumber Long required,
+	emailAddress String required,
+	faxNumber Long required,
+	latitude Float required,
+	longitude Float required,
+	svContactId Integer required,
+	isEmailValid Integer ,
+	isAddressValid Boolean required,
+	CustContactMediumId Integer required
+}
+
+entity GeographicSiteRef {
+	siteRef String required,
+	location String required,
+	customerContactId Integer required
+
+}
+
+
+entity CustISVRef{
+	isvid Integer required,
+	isvname String required,
+	isvcustomerId Integer required,
+	customerId Integer required
+
+}
+
+entity CustISVChar{
+	name String required,
+	value Integer required,
+	valuetype String required,
+	customerISVId Integer required
+
+}
+
+entity RoleTypeRef{
+	rolename String required,
+	roletype String required
+}
+
+entity CustRelParty {
+	name String required,
+	roleId Integer required,
+	individualId Integer required,
+	validFrom Instant required,
+	validTo Instant required,
+	customerId Integer required
+
+}
+
+entity ShoppingSessionRef{
+	href String required,
+	shoppingSessionId Integer required,
+	status String required,
+	createdDate Instant required,
+	sessionAbondoned Boolean required,
+	customerId Integer required,
+	channel String required,
+	individualId Integer required
+
+}
+
+entity Individual{
+	title String required,
+	firstName String required,
+	lastName String required,
+	middleName String,
+	formattedName String required,
+	dateOfBirth Instant required,
+	gender String required,
+	maritalStatus String required,
+	nationality String required,
+	status String required
+
+}
+entity IndAuditTrial{
+	name String required,
+	activity String required,
+	customerId Integer required,
+	individualId Integer required,
+	createdDate Instant required
+}
+
+
+entity IndContact{
+	preferred String required,
+	type String required,
+	validFrom Instant required,
+	validTo Instant required,
+	individualId Integer required
+
+}
+
+entity IndContactChar{
+	type String required,
+	street1 String required,
+	street2 String required,
+	city String required,
+	stateOrProvince String required,
+	country String required,
+	postCode Long required,
+	phoneNumber Long required,
+	emailAddress String required,
+	faxNumber Long required,
+	latitude Float required,
+	longitude Float required,
+	svContactId Integer required,
+	isEmailValid Boolean ,
+	isAddressValid Boolean required,
+	individualContactId Integer required
+}
+
+
+
+entity IndChar{
+	name String required,
+	value Boolean required,
+	valuetype String required,
+	individualId Integer required
+}
+
+entity Department{
+	name String required,
+	departmentHead String required,
+	status String required,
+	individualId Integer required
+
+}
+entity IndActivation {
+	name String required,
+	activity String required,
+	createdDate Instant required,
+	customerId Integer required,
+	individualId Integer required
+
+}
+
+entity NewsLetterType {
+	newLetterType String required,
+	displayValue String required,
+	description String,
+	status String required
+}
+
+entity Industry {
+	name String required,
+	code String required,
+	description String
+}
+
+entity CustNewsLetterConfig {
+	newLetterTypeId Integer required,
+	value String required,
+	customerId Integer required
+}
+
+entity IndNewsLetterConf {
+	newLetterTypeId Integer required,
+	value String required,
+	individualId Integer required
+}
+
+
+
+
+
+
+entity AutoPay {
+	channel String required,
+	autoPayId Integer required,
+	debitDate Instant required,
+	status String required,
+	createdDate Instant required,
+	createdBy String required,
+	updatedDate Instant required,
+	updatedBy String required,
+	customerId Integer required
+}
+
+entity Eligibility {
+	noOfLines Integer required,
+	creditAmount BigDecimal required,
+	description String,
+	isEligibleFOrPayLater Boolean required
+}
+
+entity CreditCheckVerification {
+	verificationQuestion String required,
+	verificationQuestionChoice String required,
+	verificationAnswer String required
+
+}
+
+entity BankCardType {
+	brand String required,
+	cardType String required,
+	cardNumber Long required,
+	expirationDate Instant required,
+	cvv Integer required,
+	lastFourDigits Integer required,
+	bank String required
+}
+
+entity CustStatistics {
+	name String required,
+	value String required,
+	valuetype String required,
+	customerId Integer required
+}
+
+entity CustBillingRef {
+	amountDue BigDecimal required,
+	billDate Instant required,
+	billNo Long required,
+	billingPeriod Instant required,
+	category String required,
+	href String required,
+	lastUpdatedDate Instant required,
+	nextUpdatedDate Instant required,
+	paymentDueDate Instant required,
+	state String required,
+	taxExcludedAmount BigDecimal required,
+	taxIncludedAmount BigDecimal required,
+	customerId Integer required
+}
+
+relationship OneToOne {
+Customer to CustBillingAcc,
+Customer to CustCreditProfile,
+Customer to CustBillingRef,
+Individual to IndActivation,
+Individual to IndNewsLetterConf,
+Industry to Customer
+}
+
+relationship OneToMany {
+Customer to CustContact,
+CustContact to GeographicSiteRef,
+Customer to CustStatistics,
+CustContact to CustContactChar,
+Customer to CustChar,
+Customer to CustCommunicationRef,
+Customer to CustPasswordChar,
+Customer to CustNewsLetterConfig,
+Customer to CustSecurityChar,
+Customer to CustRelParty,
+NewsLetterType to CustNewsLetterConfig,
+NewsLetterType to IndNewsLetterConf,
+CustBillingRef to CustPaymentMethod,
+Customer to CustISVRef,
+CustISVRef to CustISVChar,
+CustPaymentMethod to BankCardType,
+Individual to IndContact,
+Individual to IndChar,
+IndContact to IndContactChar,
+Individual to IndAuditTrial,
+Department to CustRelParty,
+RoleTypeRef to CustRelParty,
+Individual to CustRelParty,
+Customer to ShoppingSessionRef,
+Individual to ShoppingSessionRef
+
+}
+
+
